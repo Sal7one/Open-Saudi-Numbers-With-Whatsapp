@@ -31,4 +31,9 @@ class DeepLinkHandler : AppCompatActivity() {
         val i = Intent(Intent.ACTION_VIEW, uri)
         startActivity(i)
     }
+
+    override fun onStop() {
+        super.onStop()
+        finishAndRemoveTask()
+    }
 }
