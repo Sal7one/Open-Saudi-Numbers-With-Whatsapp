@@ -25,12 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         var phone = phoneNumber.toString()
         phone = phone.replace(" ", "")
+
         if(phone.startsWith("05"))
             phone = "966" + phone.substring(phone.indexOf("05")+1)
+        else if(phone.startsWith("+"))
+            phone = phone.substring(phone.indexOf("+")+1)
 
         switchToApp(phone)
-
-
     }
 
     private fun switchToApp(cleanPhone: String) {
