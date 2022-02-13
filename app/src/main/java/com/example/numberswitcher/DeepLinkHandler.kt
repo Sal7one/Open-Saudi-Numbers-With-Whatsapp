@@ -11,7 +11,16 @@ class DeepLinkHandler : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val text = intent
             .getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT)
-        numberHandler(text)
+
+        if (text != null) {
+            numberHandler(text)
+        } else {
+            var numberWithTelSchema = intent.getStringExtra("android.intent.extra.TEXT").toString()
+            numberWithTelSchema = numberWithTelSchema.replace(" ", "")
+            numberWithTelSchema = numberWithTelSchema.replace("tel:", "")
+
+            numberHandler(numberWithTelSchema)
+        }
     }
 
     private fun numberHandler(phoneNumber: CharSequence?) {
