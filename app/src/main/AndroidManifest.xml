@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.numberswitcher">
-
 
     <application
         android:allowBackup="true"
@@ -13,18 +11,20 @@
         android:theme="@style/Theme.NumberSwitcher">
         <activity
             android:name=".DeepLinkHandler"
-            android:theme="@style/No_display_theme"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/No_display_theme">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/plain" />
             </intent-filter>
+
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <data android:mimeType="*/*" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
         </activity>
     </application>
 </manifest>

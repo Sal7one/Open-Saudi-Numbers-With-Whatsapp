@@ -3,13 +3,13 @@ package com.example.numberswitcher
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class DeepLinkHandler : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val text = intent
             .getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT)
 
@@ -50,9 +50,9 @@ class DeepLinkHandler : AppCompatActivity() {
         val whatsAppURI = "https://api.whatsapp.com/send?phone="
         val uri = Uri.parse(whatsAppURI + cleanPhone)
         val i = Intent(Intent.ACTION_VIEW, uri)
-        i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP;
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(i)
     }
 
@@ -60,4 +60,5 @@ class DeepLinkHandler : AppCompatActivity() {
         super.onStop()
         finishAndRemoveTask()
     }
+
 }
