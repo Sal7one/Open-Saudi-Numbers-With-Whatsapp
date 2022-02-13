@@ -11,8 +11,7 @@
         android:theme="@style/Theme.NumberSwitcher">
         <activity
             android:name=".DeepLinkHandler"
-            android:exported="true"
-            android:theme="@style/No_display_theme">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
                 <category android:name="android.intent.category.DEFAULT" />

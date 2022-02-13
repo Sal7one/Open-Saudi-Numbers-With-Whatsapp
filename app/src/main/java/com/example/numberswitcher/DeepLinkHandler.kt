@@ -10,17 +10,17 @@ class DeepLinkHandler : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val text = intent
-            .getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT)
+        val mainIntent = intent
+        val fromShareMenu = mainIntent.extras?.getString(Intent.EXTRA_TEXT)
 
-        if (text != null) {
-            numberHandler(text.toString())
-        } else {
-            var numberWithTelSchema = intent.extras?.getString(Intent.EXTRA_TEXT).toString()
+        if (fromShareMenu != null) {
+            var numberWithTelSchema = fromShareMenu.toString()
             numberWithTelSchema = numberWithTelSchema.replace(" ", "")
             numberWithTelSchema = numberWithTelSchema.replace("tel:", "")
-
             numberHandler(numberWithTelSchema)
+        } else {
+            val fromContextMenu = mainIntent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT)
+            numberHandler(fromContextMenu.toString())
         }
     }
 
