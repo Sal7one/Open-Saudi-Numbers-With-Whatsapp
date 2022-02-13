@@ -16,9 +16,7 @@ class DeepLinkHandler : AppCompatActivity() {
         if (text != null) {
             numberHandler(text.toString())
         } else {
-            var numberWithTelSchema = intent.extras.toString()
-            numberWithTelSchema = numberWithTelSchema.substring(numberWithTelSchema.indexOf("tel:"))
-            numberWithTelSchema = numberWithTelSchema.substring(0, numberWithTelSchema.indexOf(","))
+            var numberWithTelSchema = intent.extras?.getString(Intent.EXTRA_TEXT).toString()
             numberWithTelSchema = numberWithTelSchema.replace(" ", "")
             numberWithTelSchema = numberWithTelSchema.replace("tel:", "")
 
@@ -60,5 +58,4 @@ class DeepLinkHandler : AppCompatActivity() {
         super.onStop()
         finishAndRemoveTask()
     }
-
 }
