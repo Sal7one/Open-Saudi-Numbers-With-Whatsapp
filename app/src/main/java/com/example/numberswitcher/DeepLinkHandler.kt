@@ -13,7 +13,7 @@ class DeepLinkHandler : AppCompatActivity() {
             .getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT)
 
         if (text != null) {
-            numberHandler(text)
+            numberHandler(text.toString())
         } else {
             var numberWithTelSchema = intent.getStringExtra("android.intent.extra.TEXT").toString()
             numberWithTelSchema = numberWithTelSchema.replace(" ", "")
@@ -23,8 +23,8 @@ class DeepLinkHandler : AppCompatActivity() {
         }
     }
 
-    private fun numberHandler(phoneNumber: CharSequence?) {
-        var phone = phoneNumber.toString()
+    private fun numberHandler(phoneNumber: String) {
+        var phone = phoneNumber
         phone = phone.replace(" ", "")
 
         if (phone.startsWith("05"))
@@ -47,6 +47,9 @@ class DeepLinkHandler : AppCompatActivity() {
         val whatsAppURI = "https://api.whatsapp.com/send?phone="
         val uri = Uri.parse(whatsAppURI + cleanPhone)
         val i = Intent(Intent.ACTION_VIEW, uri)
+        i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP;
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i)
     }
 
