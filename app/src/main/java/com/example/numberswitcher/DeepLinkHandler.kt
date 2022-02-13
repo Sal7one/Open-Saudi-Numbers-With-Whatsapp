@@ -48,6 +48,7 @@ class DeepLinkHandler : AppCompatActivity() {
         val whatsAppURI = "https://api.whatsapp.com/send?phone="
         val uri = Uri.parse(whatsAppURI + cleanPhone)
         val i = Intent(Intent.ACTION_VIEW, uri)
+        // To tell the system we to expect this activity to be finished after intent
         i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
