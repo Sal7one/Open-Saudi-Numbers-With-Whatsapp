@@ -3,6 +3,7 @@ package com.example.numberswitcher
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -15,7 +16,9 @@ class DeepLinkHandler : AppCompatActivity() {
         if (text != null) {
             numberHandler(text.toString())
         } else {
-            var numberWithTelSchema = intent.getStringExtra("android.intent.extra.TEXT").toString()
+            var numberWithTelSchema = intent.extras.toString()
+            numberWithTelSchema = numberWithTelSchema.substring(numberWithTelSchema.indexOf("tel:"))
+            numberWithTelSchema = numberWithTelSchema.substring(0, numberWithTelSchema.indexOf(","))
             numberWithTelSchema = numberWithTelSchema.replace(" ", "")
             numberWithTelSchema = numberWithTelSchema.replace("tel:", "")
 
