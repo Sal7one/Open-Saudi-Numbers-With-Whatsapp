@@ -1,6 +1,8 @@
-# Open-Saudi-Numbers-With-Whatsapp
+# Open Saudi Numbers With Whatsapp | افتح الارقام السعودية بالواتس اب مباشرة
 
-A background android application That Opens Saudi phone numbers after selecting them from the context menu Or using using the share functino to the App "Open with WhatsApp"
+A background android application That Opens Saudi phone numbers in WhatsApp without saving them | نطبيق في الخلفية بدون واجهة يفتح الارقام السعودية مباشرة بالواتس اب بدون حفظ
+
+# How to use | كيف تستخدم
 
 # Using context menu | باستخدام التحديد
 <img src="https://github.com/Sal7one/Open-Saudi-Numbers-With-Whatsapp/blob/master/img1.jpeg" alt="feed example" width="200">
