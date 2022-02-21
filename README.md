@@ -7,7 +7,7 @@ A background android application That Opens Saudi phone numbers in WhatsApp with
 # 1 - Using context menu | باستخدام التحديد
 <img src="https://github.com/Sal7one/Open-Saudi-Numbers-With-Whatsapp/blob/master/img1.jpeg" alt="feed example" width="200">
 
-# 2 - Sharing (if it is in Link format) | اذا كان بشكل رابط نفس سو مشاركة ثم المربع الصغير 
+# 2 - Sharing (if it is in Link format) | اذا كان بشكل رابط سو مشاركة ثم المربع الصغير 
 <img src="https://github.com/Sal7one/Open-Saudi-Numbers-With-Whatsapp/blob/master/img2.jpeg" alt="feed example" width="200">
 
 If the icon doesnt appear find the app using the normal share menu then it will appear the next time (Recent Android versions) | ااذا ما طلع لك ايقونة التطبيق نفس الصورة سو مشاركة له ثم اختار التطبيق والمرة الجاية راح تطلع لك
