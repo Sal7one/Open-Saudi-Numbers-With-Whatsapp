@@ -57,7 +57,30 @@ class DeepLinkHandlerTest {
         multiNumsWithText2 = "sdfsdf\n0540885465sddsfsdf\n0541234567sadasd"
     }
 
-    private fun getListOfNumbers(numberWithoutText: String): List<String> {
+    @Test
+    fun `Take phone number and format it to whatsapp api`() {
+        // ------------------Correct numbers------------------------
+        // Mobile phones
+        assertTrue(isASaudiPhoneNumber(formatNumber(numberWithoutPlusAndCountryCode)))
+        assertTrue(isASaudiPhoneNumber(formatNumber(numberWithoutPlus)))
+        assertTrue(isASaudiPhoneNumber(formatNumber(numberWithPlusAndCountryCode)))
+        // Telephone Lines
+        assertTrue(isASaudiPhoneNumber(formatNumber(telephoneWithoutPlusAndCountryCode)))
+        assertTrue(isASaudiPhoneNumber(formatNumber(telephoneWithoutPlus)))
+        assertTrue(isASaudiPhoneNumber(formatNumber(telephoneWithPlusAndCountryCode)))
+
+        // Should all be 12 digits with 9665xxxxxxxx or 9661xxxxxxxx format
+        // This will be sent to whatsapp api
+        assertEquals(12, formatNumber(numberWithoutPlusAndCountryCode).length)
+        assertEquals(12, formatNumber(numberWithoutPlus).length)
+        assertEquals(12, formatNumber(numberWithPlusAndCountryCode).length)
+        assertEquals(12, formatNumber(telephoneWithoutPlusAndCountryCode).length)
+        assertEquals(12, formatNumber(telephoneWithoutPlus).length)
+        assertEquals(formatNumber(telephoneWithPlusAndCountryCode).length, 12)
+        // -----------end----Correct numbers-------end-------------
+    }
+
+        private fun getListOfNumbers(numberWithoutText: String): List<String> {
         val regex = Regex("((\\+)?(966([_ \\-])?0?|0)(5[0-9]{8}|1([1-9])[0-9]{7}))")
         val matches = regex.findAll(numberWithoutText)
         // Group value 0 Matches all of the Regex pattern
