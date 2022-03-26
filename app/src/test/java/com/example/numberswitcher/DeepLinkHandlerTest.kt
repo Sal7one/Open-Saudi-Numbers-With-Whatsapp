@@ -78,6 +78,32 @@ class DeepLinkHandlerTest {
         assertEquals(12, formatNumber(telephoneWithoutPlus).length)
         assertEquals(formatNumber(telephoneWithPlusAndCountryCode).length, 12)
         // -----------end----Correct numbers-------end-------------
+
+        // ------------------Numbers with Text------------------------
+        numWithText1 = removeTextFromString(numWithText1)
+        numWithText2 = removeTextFromString(numWithText2)
+        numWithText3 = removeTextFromString(numWithText3)
+        numWithText4 = removeTextFromString(numWithText4)
+        numWithText5 = removeTextFromString(numWithText5)
+        numWithText6 = removeTextFromString(numWithText6)
+
+        numWithText1 = getListOfNumbers(numWithText1)[0]
+        numWithText2 = getListOfNumbers(numWithText2)[0]
+        numWithText3 = getListOfNumbers(numWithText3)[0]
+        numWithText4 = getListOfNumbers(numWithText4)[0]
+        numWithText5 = getListOfNumbers(numWithText5)[0]
+        numWithText6 = getListOfNumbers(numWithText6)[0]
+
+
+        // Should all be 12 digits with 9665xxxxxxxx or 9661xxxxxxxx format
+        // This will be sent to whatsapp api
+        assertEquals(12, formatNumber(numWithText1).length)
+        assertEquals(12, formatNumber(numWithText2).length)
+        assertEquals(12, formatNumber(numWithText3).length)
+        assertEquals(12, formatNumber(numWithText4).length)
+        assertEquals(12, formatNumber(numWithText5).length)
+        assertEquals(12, formatNumber(numWithText6).length)
+        //-----------end----Numbers with Text-------end-------------
     }
 
         private fun getListOfNumbers(numberWithoutText: String): List<String> {
