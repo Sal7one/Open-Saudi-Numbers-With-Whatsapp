@@ -8,13 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:launchMode="singleInstance"
-        android:theme="@style/Theme.AppCompat.Dialog">
+        android:theme="@style/Theme.NumberSwitcher">
         <activity
             android:name=".DeepLinkHandlerCompose"
             android:exported="true"
             android:label="@string/title_activity_deep_link_handler_compose"
-            android:theme="@style/Theme.NumberSwitcher">
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.AppCompat.Dialog">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
                 <category android:name="android.intent.category.DEFAULT" />
