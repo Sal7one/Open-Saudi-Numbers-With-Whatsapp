@@ -113,6 +113,10 @@ class DeepLinkHandlerTest {
         print(getListOfNumbers(multiNumsWithText2).map { formatNumber(it) }.toString())
         print("\n")
         //------end --- Multiple numbers with text ------end-------
+
+        // No saudi numbers found
+        assertFalse(isASaudiPhoneNumber("+965512345678"))
+        assertFalse(isASaudiPhoneNumber("k...."))
     }
 
         private fun getListOfNumbers(numberWithoutText: String): List<String> {
