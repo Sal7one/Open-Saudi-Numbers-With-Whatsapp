@@ -104,6 +104,15 @@ class DeepLinkHandlerTest {
         assertEquals(12, formatNumber(numWithText5).length)
         assertEquals(12, formatNumber(numWithText6).length)
         //-----------end----Numbers with Text-------end-------------
+
+        // --------- Multiple numbers with text -------------
+        print(getListOfNumbers(multiNums).map { formatNumber(it) }.toString())
+        print("\n")
+        print(getListOfNumbers(multiNumsWithText1).map { formatNumber(it) }.toString())
+        print("\n")
+        print(getListOfNumbers(multiNumsWithText2).map { formatNumber(it) }.toString())
+        print("\n")
+        //------end --- Multiple numbers with text ------end-------
     }
 
         private fun getListOfNumbers(numberWithoutText: String): List<String> {
