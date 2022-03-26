@@ -40,7 +40,7 @@ class DeepLinkHandlerTest {
         telephoneWithPlusAndCountryCode = "+966125876524"
 
         // Numbers with text
-        numWithText1 = "Hello This is a stexct twekfwekisjf \n+966\n540-21-4\n5=1asd"
+        numWithText1 = "Hello This is a stexct twekfwekisjf \n+966\n540-214-4\n5=1asd"
         numWithText2 = "Hello This is a stexct twekfwekisjf sdfsdfsdfsdf+966-541234567aszf41saf6s-"
         numWithText3 =
             "Hello This is a stexct 966 541234567 twekfwekisjf sdfsdfsdfsdf+966-541234567aszf41saf6s-"
