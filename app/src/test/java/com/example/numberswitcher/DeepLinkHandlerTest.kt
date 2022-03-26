@@ -106,12 +106,10 @@ class DeepLinkHandlerTest {
         //-----------end----Numbers with Text-------end-------------
 
         // --------- Multiple numbers with text -------------
+        assertEquals(4, getListOfNumbers(multiNums).size)
         print(getListOfNumbers(multiNums).map { formatNumber(it) }.toString())
-        print("\n")
-        print(getListOfNumbers(multiNumsWithText1).map { formatNumber(it) }.toString())
-        print("\n")
-        print(getListOfNumbers(multiNumsWithText2).map { formatNumber(it) }.toString())
-        print("\n")
+        assertEquals(2, getListOfNumbers(multiNumsWithText1).size)
+        assertEquals(2, getListOfNumbers(multiNumsWithText2).size)
         //------end --- Multiple numbers with text ------end-------
 
         // No saudi numbers found
