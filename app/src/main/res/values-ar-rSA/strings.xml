@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Open with Whats</string>
+    <string name="title_activity_deep_link_handler_compose">افتح بالواتس اب</string>
+    <string name="not_a_saudi_number">لم أجد رقماً سعودياً</string>
+    <string name="multiple_numbers">وجدت عدة أرقام.. اختر واحد</string>
+    <string name="cancel">إلغاء</string>
+</resources>

@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Open with WhatsApp</string>
-    <string name="title_activity_deep_link_handler_compose">DeepLinkHandlerCompose</string>
+    <string name="app_name">Open with Whats</string>
+    <string name="title_activity_deep_link_handler_compose">Open with Whatsapp</string>
+    <string name="not_a_saudi_number">I didn\'t find a Saudi number</string>
+    <string name="multiple_numbers">Multiple Numbers found\n\t\tPlease choose one.</string>
+    <string name="cancel">Cancel</string>
 </resources>
