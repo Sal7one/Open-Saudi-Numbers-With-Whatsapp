@@ -117,7 +117,7 @@ class DeepLinkHandlerTest {
         assertFalse(isASaudiPhoneNumber("k...."))
     }
 
-        private fun getListOfNumbers(numberWithoutText: String): List<String> {
+    private fun getListOfNumbers(numberWithoutText: String): List<String> {
         val regex = Regex("((\\+)?(966([_ \\-])?0?|0)(5[0-9]{8}|1([1-9])[0-9]{7}))")
         val matches = regex.findAll(numberWithoutText)
         // Group value 0 Matches all of the Regex pattern
