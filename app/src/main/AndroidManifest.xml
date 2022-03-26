@@ -10,20 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NumberSwitcher">
         <activity
+            android:name=".DeepLinkHandlerCompose"
+            android:exported="false"
+            android:label="@string/title_activity_deep_link_handler_compose"
+            android:theme="@style/Theme.NumberSwitcher" />
+        <activity
             android:name=".DeepLinkHandler"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
+
                 <data android:mimeType="*/*" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
     </application>
+
 </manifest>

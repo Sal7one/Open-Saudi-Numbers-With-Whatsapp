@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Open with WhatsApp</string>
+    <string name="title_activity_deep_link_handler_compose">DeepLinkHandlerCompose</string>
 </resources>
