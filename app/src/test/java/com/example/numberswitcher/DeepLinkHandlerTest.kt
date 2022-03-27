@@ -11,6 +11,7 @@ class DeepLinkHandlerTest {
     private lateinit var numberWithoutPlus: String
     private lateinit var telephoneWithoutPlus: String
     private lateinit var numberWithPlusAndCountryCode: String
+    private lateinit var numberWithZerosAndCountryCode: String
     private lateinit var telephoneWithPlusAndCountryCode: String
 
     // Values that needs cleaning
@@ -33,6 +34,7 @@ class DeepLinkHandlerTest {
         numberWithoutPlusAndCountryCode = "0541234567"
         numberWithoutPlus = "966541234567"
         numberWithPlusAndCountryCode = "+966541234567"
+        numberWithZerosAndCountryCode = "00966541234599"
 
         // Telephone
         telephoneWithoutPlusAndCountryCode = "0125876524"
@@ -68,6 +70,7 @@ class DeepLinkHandlerTest {
         assertTrue(isASaudiPhoneNumber(formatNumber(telephoneWithoutPlusAndCountryCode)))
         assertTrue(isASaudiPhoneNumber(formatNumber(telephoneWithoutPlus)))
         assertTrue(isASaudiPhoneNumber(formatNumber(telephoneWithPlusAndCountryCode)))
+        assertTrue(isASaudiPhoneNumber(formatNumber(numberWithZerosAndCountryCode)))
 
         // Should all be 12 digits with 9665xxxxxxxx or 9661xxxxxxxx format
         // This will be sent to whatsapp api
@@ -76,7 +79,8 @@ class DeepLinkHandlerTest {
         assertEquals(12, formatNumber(numberWithPlusAndCountryCode).length)
         assertEquals(12, formatNumber(telephoneWithoutPlusAndCountryCode).length)
         assertEquals(12, formatNumber(telephoneWithoutPlus).length)
-        assertEquals(formatNumber(telephoneWithPlusAndCountryCode).length, 12)
+        assertEquals(12, formatNumber(telephoneWithPlusAndCountryCode).length)
+        assertEquals(12, formatNumber(telephoneWithPlusAndCountryCode).length)
         // -----------end----Correct numbers-------end-------------
 
         // ------------------Numbers with Text------------------------
@@ -107,7 +111,6 @@ class DeepLinkHandlerTest {
 
         // --------- Multiple numbers with text -------------
         assertEquals(4, getListOfNumbers(multiNums).size)
-        print(getListOfNumbers(multiNums).map { formatNumber(it) }.toString())
         assertEquals(2, getListOfNumbers(multiNumsWithText1).size)
         assertEquals(2, getListOfNumbers(multiNumsWithText2).size)
         //------end --- Multiple numbers with text ------end-------
@@ -146,6 +149,8 @@ class DeepLinkHandlerTest {
             // Line/Telephone numbers
             telNumber.startsWith("01") -> telNumber =
                 "966" + telNumber.substring(telNumber.indexOf("01") + 1)
+            telNumber.startsWith("00") -> telNumber =
+                telNumber.substring(telNumber.indexOf("00") + 2)
             // Doesn't matter just remove +
             telNumber.startsWith("+") -> telNumber = telNumber.substring(telNumber.indexOf("+") + 1)
         }
