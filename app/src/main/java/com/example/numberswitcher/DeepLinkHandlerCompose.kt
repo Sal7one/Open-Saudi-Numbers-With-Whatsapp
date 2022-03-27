@@ -106,6 +106,9 @@ class DeepLinkHandlerCompose : ComponentActivity() {
             // Line/Telephone numbers
             telNumber.startsWith("01") -> telNumber =
                 "966" + telNumber.substring(telNumber.indexOf("01") + 1)
+            // 00 instead of +
+            telNumber.startsWith("00") -> telNumber =
+                telNumber.substring(telNumber.indexOf("00") + 2)
             // Doesn't matter just remove +
             telNumber.startsWith("+") -> telNumber = telNumber.substring(telNumber.indexOf("+") + 1)
         }
