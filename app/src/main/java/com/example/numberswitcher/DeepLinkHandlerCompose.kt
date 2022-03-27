@@ -43,7 +43,6 @@ class DeepLinkHandlerCompose : ComponentActivity() {
     @Composable
     private fun NumberHandler(number: String) {
         val numberWithoutText = removeTextFromString(number)
-
         if (!isASaudiPhoneNumber(numberWithoutText)) {
             Toast.makeText(this, getString(R.string.not_a_saudi_number), Toast.LENGTH_SHORT)
                 .show()
