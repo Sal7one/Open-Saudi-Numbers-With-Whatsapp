@@ -5,6 +5,7 @@ import org.junit.Before
 import org.junit.Test
 
 class DeepLinkHandlerTest {
+
     // Correct values
     private lateinit var numberWithoutPlusAndCountryCode: String
     private lateinit var telephoneWithoutPlusAndCountryCode: String
@@ -24,7 +25,6 @@ class DeepLinkHandlerTest {
 
     // Multiple numbers
     private lateinit var multiNums: String
-
     private lateinit var multiNumsWithText1: String
     private lateinit var multiNumsWithText2: String
 
@@ -62,10 +62,12 @@ class DeepLinkHandlerTest {
     @Test
     fun `Take phone number and format it to whatsapp api`() {
         // ------------------Correct numbers------------------------
+
         // Mobile phones
         assertTrue(isASaudiPhoneNumber(formatNumber(numberWithoutPlusAndCountryCode)))
         assertTrue(isASaudiPhoneNumber(formatNumber(numberWithoutPlus)))
         assertTrue(isASaudiPhoneNumber(formatNumber(numberWithPlusAndCountryCode)))
+
         // Telephone Lines
         assertTrue(isASaudiPhoneNumber(formatNumber(telephoneWithoutPlusAndCountryCode)))
         assertTrue(isASaudiPhoneNumber(formatNumber(telephoneWithoutPlus)))
