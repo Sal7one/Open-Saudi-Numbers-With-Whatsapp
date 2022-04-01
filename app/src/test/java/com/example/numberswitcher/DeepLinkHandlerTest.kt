@@ -120,6 +120,12 @@ class DeepLinkHandlerTest {
         // No saudi numbers found
         assertFalse(isASaudiPhoneNumber("+965512345678"))
         assertFalse(isASaudiPhoneNumber("k...."))
+
+        // International testing
+        assertEquals("967", internationalToWhatsappFormat("00967"))
+        assertEquals("967", internationalToWhatsappFormat("+967"))
+        assertEquals("145", internationalToWhatsappFormat("00145"))
+        assertEquals("145", internationalToWhatsappFormat("+145"))
     }
 
     private fun getListOfNumbers(numberWithoutText: String): List<String> {
@@ -132,6 +138,16 @@ class DeepLinkHandlerTest {
         return stringOfNumbers.split(",").toList()
     }
 
+    private fun internationalToWhatsappFormat(number: String): String {
+        var telNumber = number.replace(" ", "")
+        when {
+            telNumber.startsWith("00") -> telNumber =
+                telNumber.substring(telNumber.indexOf("00") + 2)
+            // Doesn't matter just remove +
+            telNumber.startsWith("+") -> telNumber = telNumber.substring(telNumber.indexOf("+") + 1)
+        }
+        return telNumber
+    }
     private fun formatNumber(number: String): String {
         var telNumber = number.replace(" ", "")
         when {
