@@ -13,5 +13,5 @@ A background android application That Opens Saudi phone numbers in WhatsApp with
 If the icon doesnt appear find the app using the normal share menu then it will appear the next time (Recent Android versions) | ااذا ما طلع لك ايقونة التطبيق نفس الصورة سو مشاركة له ثم اختار التطبيق والمرة الجاية راح تطلع لك
 
 
-# -- Works from everywhere | تشتغل من كل مكان تقريباً حتى ببرنامج المكالمات
+# -- Works from everywhere | تشتغل من كل مكان حتى ببرنامج المكالمات
 <img src="https://github.com/Sal7one/Open-Saudi-Numbers-With-Whatsapp/blob/master/img3.jpeg" alt="feed example" width="250">
